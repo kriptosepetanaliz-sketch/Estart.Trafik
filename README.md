@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Estart Trafik - Mehmet Emin Ertaş</title>
     <style>
-        /* Tasarım ve Hizalama Ayarları */
+        /* Tasarım ve Hizalama: Ekranın en üstünden 35px boşluk bırakır */
         body { 
             background-color: #0b0e14; 
             margin: 0; 
@@ -28,7 +28,7 @@
             align-items: center; 
             width: 100%; 
             max-width: 400px; 
-            padding-top: 35px; /* S23 Ultra için ideal yukarı hizalama */
+            padding-top: 35px; /* S23 Ultra için dengelenmiş üst boşluk */
             text-align: center; 
         }
         
@@ -36,7 +36,7 @@
         .header p { color: #00bcd4; font-size: 10px; margin: 0; font-weight: bold; letter-spacing: 1.5px; }
         .header h1 { font-size: 24px; margin: 5px 0; font-weight: 900; text-transform: uppercase; }
 
-        /* Bluetooth Butonu */
+        /* Bluetooth Bağlantı Butonu */
         #connectBtn { 
             background: none; 
             border: 2px solid #00bcd4; 
@@ -60,6 +60,7 @@
             box-shadow: inset 0 0 15px rgba(0,0,0,0.5); 
         }
 
+        /* Kontrol Butonları Grid Yapısı */
         .grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
@@ -97,7 +98,7 @@
             cursor: pointer; 
         }
 
-        /* Bluetooth Butonu ile Aynı Formatta Alt Link */
+        /* Alt Link: Bluetooth butonu ile aynı formatta */
         .footer-btn { 
             background: none; 
             border: 2px solid #00bcd4; 
@@ -139,9 +140,9 @@
         let bleChar;
 
         async function connectBluetooth() {
-            // Tarayıcı ve Protokol Kontrolü
+            // Güvenlik Kontrolü: Bluetooth sadece HTTPS üzerinde çalışır
             if (!navigator.bluetooth) {
-                alert("Bluetooth erişimi için güvenli bağlantı (HTTPS) gereklidir. Lütfen APK içinde bu adresi yüklediğinizden emin olun.");
+                alert("Bluetooth erişimi için güvenli bağlantı (HTTPS) gereklidir. Lütfen APK içinde GitHub linkinizi (HTTPS) yüklediğinizden emin olun.");
                 return;
             }
 
@@ -179,3 +180,4 @@
     </script>
 </body>
 </html>
+
